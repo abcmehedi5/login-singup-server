@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reset Password </title>
+    <style>
+      .click {
+        font-size: 23px;
+        border: 3px solid rgb(172, 171, 170);
+        padding: 40px;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+        text-decoration: none;
+        text-align: center;
+      }
+      .main {
+        display: flex;
+        justify-content: center;
+        height: 100vh;
+        align-items: center;
+      }
+    </style>
+
+    <script>
+      const status = " <%-JSON.stringify(status)%>";
+      if (JSON.parse(status) === "verfied") {
+        window.location.href = "http://localhost:3000/login";
+      }
+    </script>
+  </head>
+  <body class="main">
+    <div class="click">
+      <h5><%=email%></h5>
+      <form method="post">
+        <input type="text" placeholder="Password" name="password" /> <br />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
